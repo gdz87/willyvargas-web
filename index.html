@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Willy Vargas · Asamblea de Boyacá 2027</title>
+  <meta name="description" content="Willy Vargas, candidato a la Asamblea de Boyacá 2027. Todos vamos por Boyacá." />
+  <meta property="og:title" content="Willy Vargas · Asamblea de Boyacá 2027" />
+  <meta property="og:description" content="Todos vamos por Boyacá. Control político, proyectos que sí salen y cuentas claras." />
+  <meta property="og:image" content="assets/og.png" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <style>
+    :root {
+      --naranja: #F47B20;
+      --azul: #2452A0;
+      --azul-claro: #4A7BC8;
+      --texto: #1a1a1a;
+      --muted: #5a6570;
+      --fondo: #ffffff;
+      --fondo-suave: #F5F7FB;
+      --borde: #E3E8F0;
+      --radio: 14px;
+      --max: 960px;
+      --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      color: var(--texto);
+      background: var(--fondo);
+      line-height: 1.55;
+    }
+    a { color: var(--azul); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { max-width: 100%; height: auto; display: block; }
+    .wrap { width: min(100% - 2rem, var(--max)); margin-inline: auto; }
+
+    header {
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--borde);
+    }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1rem; padding: .7rem 0;
+    }
+    .brand { display: flex; align-items: center; gap: .65rem; font-weight: 800; letter-spacing: .02em; }
+    .brand img { width: 40px; height: 40px; }
+    .brand span { color: var(--naranja); }
+    .brand span b { color: var(--azul); font-weight: 800; }
+    nav ul { display: flex; gap: 1rem; list-style: none; margin: 0; padding: 0; flex-wrap: wrap; justify-content: flex-end; }
+    nav a { color: var(--azul); font-weight: 600; font-size: .95rem; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: .4rem;
+      background: var(--naranja); color: #fff !important; font-weight: 700;
+      padding: .75rem 1.15rem; border-radius: 999px; border: 0; cursor: pointer;
+      text-decoration: none !important; box-shadow: 0 6px 18px rgba(244,123,32,.28);
+    }
+    .btn:hover { filter: brightness(1.05); }
+    .btn-outline {
+      background: transparent; color: var(--azul) !important;
+      border: 2px solid var(--azul); box-shadow: none;
+    }
+
+    .hero {
+      background: linear-gradient(160deg, #fff 0%, var(--fondo-suave) 55%, #fff 100%);
+      padding: 2.5rem 0 3rem;
+      border-bottom: 1px solid var(--borde);
+    }
+    .hero-grid {
+      display: grid; gap: 2rem; align-items: center;
+      grid-template-columns: 1.2fr .8fr;
+    }
+    @media (max-width: 760px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      nav ul { display: none; }
+    }
+    .eyebrow {
+      display: inline-block; font-size: .8rem; font-weight: 700; letter-spacing: .06em;
+      text-transform: uppercase; color: var(--azul); background: #E8EFFA;
+      padding: .35rem .7rem; border-radius: 999px; margin-bottom: .9rem;
+    }
+    h1 {
+      margin: 0 0 .6rem; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1;
+      color: var(--azul);
+    }
+    h1 .accent { color: var(--naranja); }
+    .lema {
+      font-size: clamp(1.15rem, 2.5vw, 1.45rem); font-weight: 700;
+      color: var(--naranja); margin: 0 0 1rem;
+    }
+    .lead { color: var(--muted); font-size: 1.05rem; margin: 0 0 1.4rem; max-width: 38rem; }
+    .cta-row { display: flex; flex-wrap: wrap; gap: .7rem; }
+    .logo-hero {
+      margin: 0 auto; width: min(280px, 70vw);
+      filter: drop-shadow(0 12px 28px rgba(36,82,160,.18));
+    }
+
+    section { padding: 3rem 0; }
+    section.alt { background: var(--fondo-suave); }
+    h2 {
+      margin: 0 0 1rem; font-size: 1.65rem; color: var(--azul);
+    }
+    h2::after {
+      content: ""; display: block; width: 48px; height: 4px;
+      background: var(--naranja); border-radius: 2px; margin-top: .55rem;
+    }
+    p { margin: 0 0 1rem; }
+    .cards {
+      display: grid; gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      margin-top: 1.25rem;
+    }
+    .card {
+      background: #fff; border: 1px solid var(--borde); border-radius: var(--radio);
+      padding: 1.2rem 1.25rem; box-shadow: 0 4px 14px rgba(36,82,160,.05);
+    }
+    .card h3 { margin: 0 0 .45rem; color: var(--azul); font-size: 1.1rem; }
+    .card .tag {
+      display: inline-block; font-size: .72rem; font-weight: 700; letter-spacing: .04em;
+      text-transform: uppercase; color: var(--naranja); margin-bottom: .5rem;
+    }
+    .timeline { list-style: none; margin: 1.2rem 0 0; padding: 0; }
+    .timeline li {
+      position: relative; padding: 0 0 1.25rem 1.25rem;
+      border-left: 3px solid var(--borde);
+    }
+    .timeline li:last-child { border-left-color: transparent; padding-bottom: 0; }
+    .timeline li::before {
+      content: ""; position: absolute; left: -7px; top: .35rem;
+      width: 11px; height: 11px; border-radius: 50%;
+      background: var(--naranja); box-shadow: 0 0 0 3px #ffe3c8;
+    }
+    .timeline strong { color: var(--azul); }
+    .meta { color: var(--muted); font-size: .9rem; }
+
+    .bio-grid {
+      display: grid; gap: 1.5rem; grid-template-columns: 1.1fr .9fr; align-items: start;
+    }
+    @media (max-width: 760px) { .bio-grid { grid-template-columns: 1fr; } }
+    .chip-row { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: .8rem; }
+    .chip {
+      background: #fff; border: 1px solid var(--borde); color: var(--azul);
+      font-size: .85rem; font-weight: 600; padding: .35rem .7rem; border-radius: 999px;
+    }
+
+    .contact-box {
+      background: var(--azul); color: #fff; border-radius: 18px; padding: 1.6rem 1.5rem;
+      display: grid; gap: 1rem; grid-template-columns: 1.2fr .8fr; align-items: center;
+    }
+    @media (max-width: 760px) { .contact-box { grid-template-columns: 1fr; } }
+    .contact-box h2 { color: #fff; margin-bottom: .4rem; }
+    .contact-box h2::after { background: var(--naranja); }
+    .contact-box p { color: rgba(255,255,255,.9); }
+    .contact-box a.btn { background: var(--naranja); }
+    .contact-box .links { display: flex; flex-direction: column; gap: .55rem; }
+    .contact-box .links a { color: #fff; font-weight: 600; }
+
+    footer {
+      border-top: 1px solid var(--borde); padding: 1.5rem 0 2rem;
+      color: var(--muted); font-size: .88rem;
+    }
+    footer .foot {
+      display: flex; flex-wrap: wrap; gap: .8rem 1.5rem;
+      justify-content: space-between; align-items: center;
+    }
+    .legal { max-width: 40rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#inicio" aria-label="Willy Vargas">
+        <img src="assets/favicon.png" alt="" width="40" height="40" />
+        <span>WILLY <b>VARGAS</b></span>
+      </a>
+      <nav aria-label="Principal">
+        <ul>
+          <li><a href="#quien">Quién es</a></li>
+          <li><a href="#propuestas">Propuestas</a></li>
+          <li><a href="#trayectoria">Trayectoria</a></li>
+          <li><a href="#contacto">Sumate</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Asamblea de Boyacá · 2027</div>
+          <h1>Willy Vargas<br /><span class="accent">Todos vamos por Boyacá</span></h1>
+          <p class="lema">Boyacá no come cuento.</p>
+          <p class="lead">
+            Nació en Pauna y trabaja por todo el departamento. Quiere una Asamblea que
+            haga control político con datos, formule proyectos que sí lleguen al territorio
+            y le rinda cuentas a la gente.
+          </p>
+          <div class="cta-row">
+            <a class="btn" href="#contacto">Quiero sumarme</a>
+            <a class="btn btn-outline" href="#propuestas">Ver propuestas</a>
+          </div>
+        </div>
+        <div>
+          <img class="logo-hero" src="assets/logo.png" alt="Logo Willy Vargas" width="280" height="268" />
+        </div>
+      </div>
+    </section>
+
+    <section id="quien">
+      <div class="wrap bio-grid">
+        <div>
+          <h2>Quién es Willy</h2>
+          <p>
+            Wilinton Yair Vargas Caro es boyacense de Pauna. Tiene formación en electrónica
+            y en gestión de proyectos, y una trayectoria armando, siguiendo y midiendo
+            proyectos públicos y privados en Boyacá y en otros departamentos.
+          </p>
+          <p>
+            Ha trabajado con comunidades, juntas de acción comunal y entidades territoriales.
+            En 2023 obtuvo 4.877 votos a la Asamblea. En 2027 busca la curul con organización,
+            un mensaje claro y presencia en todo Boyacá: rural y urbano.
+          </p>
+          <div class="chip-row">
+            <span class="chip">Pauna · Boyacá</span>
+            <span class="chip">Asamblea 2027</span>
+            <span class="chip">Control político</span>
+            <span class="chip">Proyectos con seguimiento</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="tag">En una frase</div>
+          <h3>Seguirle la pista a la plata de Boyacá hasta el territorio</h3>
+          <p class="meta" style="margin:0">
+            Ordenanzas, control político y gestión: lo que sí puede hacer un diputado.
+            Sin promesas de obra que la Asamblea no ejecuta.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="propuestas" class="alt">
+      <div class="wrap">
+        <h2>Tres propuestas claras</h2>
+        <p class="meta">Lo esencial para empezar. El programa se irá ampliando con lo que digan los municipios.</p>
+        <div class="cards">
+          <article class="card">
+            <div class="tag">Eje 1</div>
+            <h3>Vías y obras que se cumplen</h3>
+            <p>Un tablero público y mensual de compromisos: qué se firmó, qué tiene contrato y qué se ve en el terreno.</p>
+          </article>
+          <article class="card">
+            <div class="tag">Eje 2</div>
+            <h3>Jóvenes que se quedan</h3>
+            <p>Escuela de proyectos veredales: enseñar a formular proyectos para que las ideas de jóvenes y JAC sí puedan salir.</p>
+          </article>
+          <article class="card">
+            <div class="tag">Eje 3</div>
+            <h3>Campo y agua</h3>
+            <p>Ruta del agua veredal y economía solidaria: proyectos asociativos con regalías y cooperación, con seguimiento real.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="trayectoria">
+      <div class="wrap">
+        <h2>Trayectoria</h2>
+        <p class="meta">Resumen público a partir de su hoja de vida. Sin datos de terceros.</p>
+        <ul class="timeline">
+          <li>
+            <strong>Planeación y formulación de proyectos</strong>
+            <div class="meta">Corporación Autónoma Regional de Chivor · 2025–2026</div>
+            Gestión de proyectos de inversión socioambiental, equipos de comunicaciones y tecnología, y apoyo a supervisión de contratos y convenios.
+          </li>
+          <li>
+            <strong>Seguimiento a regalías e hidrocarburos</strong>
+            <div class="meta">Agencia Nacional de Hidrocarburos · 2024–2025</div>
+            Seguimiento físico-financiero a liquidaciones, validación de precios y costos, y apoyo a actos administrativos e informes técnicos.
+          </li>
+          <li>
+            <strong>Sostenibilidad integral y liderazgo de proyecto</strong>
+            <div class="meta">Programa de Desarrollo y Paz de Boyacá · Boyapaz · 2022–2024</div>
+            Estrategia de sostenibilidad, convenios con OCENSA e ISA Intercolombia, trabajo territorial con jóvenes y JAC en varios departamentos.
+          </li>
+          <li>
+            <strong>Gobierno digital y TIC</strong>
+            <div class="meta">Alcaldía de Pauna · 2022</div>
+            Estrategias de uso de TIC, transparencia y acceso a la información.
+          </li>
+          <li>
+            <strong>Formación</strong>
+            <div class="meta">UPTC · Pontificia Universidad Javeriana</div>
+            Ingeniería Electrónica; especialización en Gestión Estratégica de Proyectos; especialización en Gestión de Empresas de la Economía Social y Solidaria.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contacto" class="alt">
+      <div class="wrap">
+        <div class="contact-box">
+          <div>
+            <h2>Súmate</h2>
+            <p>
+              Si quieres ser voluntario, líder en tu municipio o recibir noticias de la campaña,
+              escríbele a Willy. También puedes seguirlo en redes.
+            </p>
+            <div class="cta-row" style="margin-top:1rem">
+              <a class="btn" href="https://wa.me/573208379700" target="_blank" rel="noopener">WhatsApp</a>
+              <a class="btn btn-outline" style="border-color:#fff;color:#fff!important" href="mailto:wilinton.vargas.caro@gmail.com">Correo</a>
+            </div>
+          </div>
+          <div class="links">
+            <a href="https://www.instagram.com/wilinton.vargas/" target="_blank" rel="noopener">Instagram @wilinton.vargas</a>
+            <a href="https://www.tiktok.com/@ingwillyvargas95" target="_blank" rel="noopener">TikTok @ingwillyvargas95</a>
+            <a href="https://x.com/vargas_wilinton" target="_blank" rel="noopener">X @vargas_wilinton</a>
+            <span style="opacity:.85;font-size:.92rem">Canal WhatsApp: «Boyacá no come cuento» (enlace cuando esté listo)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <div>
+        <strong style="color:var(--azul)">Willy Vargas</strong> · Asamblea de Boyacá 2027<br />
+        <span>Todos vamos por Boyacá</span>
+      </div>
+      <p class="legal">
+        Sitio informativo de campaña. Los datos de contacto se usan solo si usted escribe.
+        Opinión política es dato sensible (Ley 1581 de 2012): no se recolectan datos en este sitio sin su autorización expresa.
+        <a href="privacidad.html">Más sobre privacidad</a>.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
